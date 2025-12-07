@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LILIA AGENCY | Transformation IA</title>
+    <title>LILIA AGENCY | AI Transformation</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,17 +16,15 @@
             theme: {
                 extend: {
                     colors: {
-                        // Couleurs extraites de la Charte Graphique LILIA
                         lilia: {
-                            dark: '#12121A',      // Fond Sombre
-                            blue: '#00D0FF',      // Bleu LILIA (Accent)
-                            midnight: '#003366',  // Bleu Sombre (Titres/Ancrage)
-                            rose: '#FF5C9C',      // Rose LILIA (Dégradé)
-                            gray: '#EBEBEB',      // Gris Clair
+                            dark: '#12121A',      // Dark Background
+                            blue: '#00D0FF',      // Electric Blue (Accent)
+                            midnight: '#003366',  // Midnight Blue (Titles)
+                            rose: '#FF5C9C',      // Rose (Gradient)
+                            gray: '#EBEBEB',      // Light Gray
                         }
                     },
                     fontFamily: {
-                        // Century Gothic est une police système, on met des fallbacks géométriques
                         heading: ['"Century Gothic"', 'CenturyGothic', 'AppleGothic', 'sans-serif'],
                         body: ['"Open Sans"', 'sans-serif'],
                     },
@@ -39,44 +37,51 @@
     </script>
     
     <style>
-        /* Effet de lueur (Glow) demandé dans la charte */
         .lilia-glow {
             box-shadow: 0 0 20px rgba(0, 208, 255, 0.3);
         }
-        
-        /* Fallback si Century Gothic n'est pas installée */
         h1, h2, h3, h4, .font-heading {
             font-family: 'Century Gothic', 'CenturyGothic', sans-serif;
-            letter-spacing: 0.05em; /* Léger espacement pour le côté "Tech" */
+            letter-spacing: 0.05em;
+        }
+        /* Page Up Button Animation */
+        #pageUpBtn {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        #pageUpBtn.show {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="bg-lilia-dark text-white font-body antialiased transition-colors duration-300">
+<body class="bg-lilia-dark text-white font-body antialiased transition-colors duration-300 relative">
 
     <header class="fixed w-full top-0 z-50 bg-lilia-dark/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-2">
-                    <div class="h-8 w-8 rounded-full bg-lilia-gradient flex items-center justify-center">
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="h-8 w-8 rounded-full bg-lilia-gradient flex items-center justify-center group-hover:lilia-glow transition-all">
                         <i class="fa-solid fa-location-dot text-white text-sm"></i>
                     </div>
                     <span class="font-heading font-bold text-2xl tracking-widest text-white">LILIA</span>
-                </div>
+                </a>
 
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#produits" class="text-sm font-semibold hover:text-lilia-blue transition-colors">PRODUITS</a>
+                    <a href="#products" class="text-sm font-semibold hover:text-lilia-blue transition-colors">PRODUCTS</a>
                     <a href="#services" class="text-sm font-semibold hover:text-lilia-blue transition-colors">SERVICES</a>
-                    <a href="#blog" class="text-sm font-semibold hover:text-lilia-blue transition-colors">RESSOURCES</a>
-                    <a href="#" class="text-sm font-semibold hover:text-lilia-blue transition-colors">À PROPOS</a>
+                    <a href="#blog" class="text-sm font-semibold hover:text-lilia-blue transition-colors">RESOURCES</a>
+                    <a href="#" class="text-sm font-semibold hover:text-lilia-blue transition-colors">ABOUT</a>
                 </nav>
 
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="#" class="text-sm font-semibold hover:text-lilia-blue">Login</a>
                     <a href="#" class="px-5 py-2 bg-lilia-blue text-lilia-midnight font-heading font-bold text-sm rounded hover:bg-white transition-all lilia-glow">
-                        RÉSERVER UNE DÉMO
+                        BOOK A DEMO
                     </a>
                 </div>
 
@@ -89,195 +94,216 @@
         </div>
     </header>
 
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section class="relative pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-lilia-blue/10 rounded-full blur-[100px] -z-10"></div>
 
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                L'IA à <span class="text-transparent bg-clip-text bg-lilia-gradient">votre service</span>
+                AI at <span class="text-transparent bg-clip-text bg-lilia-gradient">Your Service</span>
             </h1>
             <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light">
-                Transformez votre entreprise grâce à nos solutions d'intelligence artificielle et notre accompagnement stratégique. Pour les PME et les visionnaires.
+                Transform your business with our enterprise-grade AI solutions and strategic guidance. Built for SMEs and visionaries.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#produits" class="px-8 py-4 bg-lilia-gradient text-white font-heading font-bold rounded hover:opacity-90 transition-opacity lilia-glow">
-                    VOIR LES SOLUTIONS
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                <a href="#products" class="px-8 py-4 bg-lilia-gradient text-white font-heading font-bold rounded hover:opacity-90 transition-opacity lilia-glow">
+                    SEE SOLUTIONS
                 </a>
                 <a href="#services" class="px-8 py-4 border border-lilia-blue text-lilia-blue font-heading font-bold rounded hover:bg-lilia-blue/10 transition-colors">
-                    NOS SERVICES
+                    OUR SERVICES
                 </a>
-            </div>
-
-            <div class="mt-16 mx-auto max-w-5xl aspect-video bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center relative overflow-hidden group">
-                <div class="absolute inset-0 bg-gradient-to-t from-lilia-dark to-transparent opacity-80"></div>
-                <div class="text-center z-10">
-                    <i class="fa-solid fa-play-circle text-6xl text-lilia-blue opacity-50 group-hover:opacity-100 transition-all cursor-pointer"></i>
-                    <p class="mt-4 text-sm text-gray-400 font-heading">VIDÉO DE PRÉSENTATION (Bientôt)</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-black/20">
+    <section class="w-full relative group cursor-pointer">
+        <div class="w-full aspect-video md:h-[80vh] bg-gray-900 border-y border-gray-800 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-lilia-dark via-transparent to-lilia-dark opacity-60 z-10 pointer-events-none"></div>
+            
+            <div class="text-center z-20 transition-transform duration-500 group-hover:scale-105">
+                <i class="fa-solid fa-play-circle text-7xl md:text-9xl text-lilia-blue opacity-80 group-hover:opacity-100 transition-all lilia-glow"></i>
+                <p class="mt-6 text-lg md:text-xl text-white font-heading tracking-widest uppercase">Watch the Future</p>
+            </div>
+            
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2664&auto=format&fit=crop')] bg-cover bg-center opacity-40"></div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-black/20">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-lilia-blue text-lg font-heading font-bold mb-2">POURQUOI MAINTENANT ?</h2>
-                    <h3 class="text-3xl font-bold mb-6">Ne laissez pas la complexité technologique freiner votre croissance.</h3>
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-chart-line text-lilia-rose"></i>
+                    <h2 class="text-lilia-blue text-lg font-heading font-bold mb-2 uppercase">Why Now?</h2>
+                    <h3 class="text-3xl font-bold mb-8 leading-snug">Don't let technical complexity slow down your growth.</h3>
+                    <div class="space-y-8">
+                        <div class="flex gap-5">
+                            <div class="w-14 h-14 bg-gray-800/50 border border-gray-700 rounded-full flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-chart-line text-lilia-rose text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg">Le Problème</h4>
-                                <p class="text-gray-400 text-sm">Perte de productivité et retard face à la concurrence qui adopte déjà l'IA.</p>
+                                <h4 class="font-bold text-xl mb-1">The Problem</h4>
+                                <p class="text-gray-400">Productivity loss and lagging behind competitors who are already adopting AI at scale.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-check text-lilia-blue"></i>
+                        <div class="flex gap-5">
+                            <div class="w-14 h-14 bg-gray-800/50 border border-gray-700 rounded-full flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-lilia-blue text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg">La Solution LILIA</h4>
-                                <p class="text-gray-400 text-sm">Une suite d'outils clés en main et un accompagnement humain pour une transition fluide.</p>
+                                <h4 class="font-bold text-xl mb-1">The LILIA Solution</h4>
+                                <p class="text-gray-400">A suite of turnkey tools and human guidance for a seamless transition.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-gray-800 to-black h-80 rounded-lg border border-gray-700 flex items-center justify-center">
-                    <span class="text-gray-600 font-heading">Image: Comparaison Avant/Après</span>
+                <div class="bg-gradient-to-br from-gray-900 to-black h-96 rounded-xl border border-gray-800 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-lilia-midnight/40 via-transparent to-transparent"></div>
+                    <span class="text-gray-600 font-heading z-10 border border-gray-700 px-4 py-2 rounded uppercase text-xs tracking-wider">Comparison Visual</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="produits" class="py-20 border-t border-gray-900">
+    <section id="products" class="py-24 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Nos Produits</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Une gamme évolutive adaptée à votre maturité digitale.</p>
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">Our Products</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Scalable solutions adapted to your digital maturity.</p>
             </div>
 
             <div class="grid md:grid-cols-4 gap-6">
-                <div class="p-6 border border-gray-800 rounded-lg bg-gray-900/50 hover:border-gray-600 transition-colors">
-                    <h3 class="text-xl font-bold mb-2">Découverte</h3>
-                    <div class="text-2xl font-bold mb-4">Gratuit</div>
-                    <a href="#" class="block w-full py-2 border border-white text-center rounded text-sm font-bold mb-6 hover:bg-white hover:text-black transition-colors">Commencer</a>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Accès Blog</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Newsletter</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Outils Basic</li>
+                <div class="p-8 border border-gray-800 rounded-xl bg-gray-900/30 hover:border-gray-600 transition-colors flex flex-col">
+                    <h3 class="text-xl font-bold mb-2 text-gray-300">Discovery</h3>
+                    <div class="text-3xl font-bold mb-6">Free</div>
+                    <a href="#" class="block w-full py-3 border border-white text-center rounded text-sm font-bold mb-8 hover:bg-white hover:text-black transition-colors">Get Started</a>
+                    <ul class="space-y-4 text-sm text-gray-400 flex-grow">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i>Blog Access</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i>Newsletter</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i>Basic Tools</li>
                     </ul>
                 </div>
 
-                <div class="p-6 border border-lilia-blue rounded-lg bg-gray-900/50 relative">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-lilia-blue text-lilia-midnight text-xs font-bold px-3 py-1 rounded-full">POPULAIRE</div>
+                <div class="p-8 border border-lilia-blue rounded-xl bg-gray-900/50 relative flex flex-col shadow-[0_0_30px_rgba(0,208,255,0.05)]">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-lilia-blue text-lilia-midnight text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide shadow-lg shadow-lilia-blue/50">Most Popular</div>
                     <h3 class="text-xl font-bold mb-2 text-lilia-blue">Start</h3>
-                    <div class="text-2xl font-bold mb-4">XX€ <span class="text-sm font-normal text-gray-500">/mois</span></div>
-                    <a href="#" class="block w-full py-2 bg-lilia-blue text-lilia-midnight text-center rounded text-sm font-bold mb-6 hover:brightness-110">Choisir</a>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li><i class="fa-solid fa-check text-lilia-blue mr-2"></i>Tout "Découverte"</li>
-                        <li><i class="fa-solid fa-check text-lilia-blue mr-2"></i>IA Générative texte</li>
-                        <li><i class="fa-solid fa-check text-lilia-blue mr-2"></i>Support Email</li>
+                    <div class="text-3xl font-bold mb-6">$XX <span class="text-sm font-normal text-gray-500">/mo</span></div>
+                    <a href="#" class="block w-full py-3 bg-lilia-blue text-lilia-midnight text-center rounded text-sm font-bold mb-8 hover:brightness-110 lilia-glow transition-all">Select Plan</a>
+                    <ul class="space-y-4 text-sm text-gray-300 flex-grow">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-lilia-blue mr-3"></i>Everything in "Discovery"</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-lilia-blue mr-3"></i>Generative AI Text</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-lilia-blue mr-3"></i>Email Support</li>
                     </ul>
                 </div>
 
-                <div class="p-6 border border-gray-800 rounded-lg bg-gray-900/50 hover:border-gray-600 transition-colors">
-                    <h3 class="text-xl font-bold mb-2">Pro</h3>
-                    <div class="text-2xl font-bold mb-4">XX€ <span class="text-sm font-normal text-gray-500">/mois</span></div>
-                    <a href="#" class="block w-full py-2 bg-gray-800 text-white text-center rounded text-sm font-bold mb-6 hover:bg-gray-700">Choisir</a>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><i class="fa-solid fa-check text-white mr-2"></i>Tout "Start"</li>
-                        <li><i class="fa-solid fa-check text-white mr-2"></i>Automatisation</li>
-                        <li><i class="fa-solid fa-check text-white mr-2"></i>Agent IA dédié</li>
+                <div class="p-8 border border-gray-800 rounded-xl bg-gray-900/30 hover:border-gray-600 transition-colors flex flex-col">
+                    <h3 class="text-xl font-bold mb-2 text-white">Pro</h3>
+                    <div class="text-3xl font-bold mb-6">$XX <span class="text-sm font-normal text-gray-500">/mo</span></div>
+                    <a href="#" class="block w-full py-3 bg-gray-800 text-white text-center rounded text-sm font-bold mb-8 hover:bg-gray-700 transition-colors">Select Plan</a>
+                    <ul class="space-y-4 text-sm text-gray-400 flex-grow">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-white mr-3"></i>Everything in "Start"</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-white mr-3"></i>Automation Suite</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-white mr-3"></i>Dedicated AI Agent</li>
                     </ul>
                 </div>
 
-                <div class="p-6 border border-gray-800 rounded-lg bg-gray-900/50 hover:border-gray-600 transition-colors">
-                    <h3 class="text-xl font-bold mb-2">Entreprise</h3>
-                    <div class="text-2xl font-bold mb-4">Sur devis</div>
-                    <a href="#" class="block w-full py-2 border border-gray-600 text-center rounded text-sm font-bold mb-6 hover:border-white hover:text-white transition-colors">Contacter</a>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><i class="fa-solid fa-check text-white mr-2"></i>Infrastructure dédiée</li>
-                        <li><i class="fa-solid fa-check text-white mr-2"></i>Sécurité avancée</li>
-                        <li><i class="fa-solid fa-check text-white mr-2"></i>CSM dédié</li>
+                <div class="p-8 border border-gray-800 rounded-xl bg-gray-900/30 hover:border-gray-600 transition-colors flex flex-col">
+                    <h3 class="text-xl font-bold mb-2 text-white">Enterprise</h3>
+                    <div class="text-3xl font-bold mb-6">Custom</div>
+                    <a href="#" class="block w-full py-3 border border-gray-600 text-center rounded text-sm font-bold mb-8 hover:border-white hover:text-white transition-colors">Contact Sales</a>
+                    <ul class="space-y-4 text-sm text-gray-400 flex-grow">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-white mr-3"></i>Dedicated Infra</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-white mr-3"></i>Advanced Security</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-white mr-3"></i>Dedicated CSM</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="text-center mt-10">
-                <a href="#" class="text-lilia-blue text-sm font-semibold hover:underline">Voir la comparaison détaillée des fonctionnalités <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            <div class="text-center mt-12">
+                <a href="#" class="text-lilia-blue text-sm font-semibold hover:underline group">
+                    See detailed feature comparison <i class="fa-solid fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 bg-gray-900/30">
+    <section id="services" class="py-24 bg-gray-900/30">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid md:grid-cols-2 gap-16">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Nos Services</h2>
-                    <p class="text-gray-400 mb-8">
-                        Parce que l'outil ne suffit pas, nous vous accompagnons dans l'intégration et la stratégie.
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Our Services</h2>
+                    <p class="text-gray-400 mb-10 text-lg">
+                        Because tools aren't enough, we support you with integration and strategy.
                     </p>
-                    <div class="space-y-4">
-                        <div class="group p-4 border border-gray-800 rounded hover:border-lilia-blue transition-colors cursor-pointer">
-                            <h4 class="font-bold text-lg group-hover:text-lilia-blue transition-colors">Consulting Stratégique</h4>
-                            <p class="text-sm text-gray-500 mt-1">Audit de maturité IA et roadmap de transformation.</p>
+                    <div class="space-y-6">
+                        <div class="group p-6 border border-gray-800 rounded-lg hover:border-lilia-blue transition-colors cursor-pointer bg-lilia-dark">
+                            <h4 class="font-bold text-xl group-hover:text-lilia-blue transition-colors mb-2">Strategic Consulting</h4>
+                            <p class="text-sm text-gray-500">AI maturity audit and transformation roadmap.</p>
                         </div>
-                        <div class="group p-4 border border-gray-800 rounded hover:border-lilia-blue transition-colors cursor-pointer">
-                            <h4 class="font-bold text-lg group-hover:text-lilia-blue transition-colors">Formation & Onboarding</h4>
-                            <p class="text-sm text-gray-500 mt-1">Montez en compétence vos équipes sur les nouveaux outils.</p>
+                        <div class="group p-6 border border-gray-800 rounded-lg hover:border-lilia-blue transition-colors cursor-pointer bg-lilia-dark">
+                            <h4 class="font-bold text-xl group-hover:text-lilia-blue transition-colors mb-2">Training & Onboarding</h4>
+                            <p class="text-sm text-gray-500">Upskill your teams on the latest AI tools.</p>
                         </div>
-                        <div class="group p-4 border border-gray-800 rounded hover:border-lilia-blue transition-colors cursor-pointer">
-                            <h4 class="font-bold text-lg group-hover:text-lilia-blue transition-colors">Développement Custom</h4>
-                            <p class="text-sm text-gray-500 mt-1">Création de solutions sur mesure pour vos besoins spécifiques.</p>
+                        <div class="group p-6 border border-gray-800 rounded-lg hover:border-lilia-blue transition-colors cursor-pointer bg-lilia-dark">
+                            <h4 class="font-bold text-xl group-hover:text-lilia-blue transition-colors mb-2">Custom Development</h4>
+                            <p class="text-sm text-gray-500">Tailor-made solutions for your specific business needs.</p>
                         </div>
                     </div>
                 </div>
-                <div class="relative bg-gradient-to-tr from-lilia-midnight to-black rounded-xl p-8 flex items-center justify-center border border-gray-800">
-                    <div class="text-center">
-                        <i class="fa-solid fa-handshake text-6xl text-lilia-blue mb-4"></i>
-                        <h3 class="text-xl font-bold">Partenaire de confiance</h3>
+                <div class="relative bg-gradient-to-tr from-lilia-midnight to-black rounded-xl p-8 flex items-center justify-center border border-gray-800 shadow-2xl">
+                    <div class="text-center p-8 bg-black/40 backdrop-blur-sm rounded-lg border border-white/10">
+                        <i class="fa-solid fa-handshake text-6xl text-lilia-blue mb-6"></i>
+                        <h3 class="text-2xl font-bold text-white">Trusted Partner</h3>
+                        <p class="mt-2 text-gray-400 text-sm">Supporting 50+ SMEs globally</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="py-20">
+    <section id="blog" class="py-24">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-end mb-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                 <div>
-                    <h2 class="text-3xl font-heading font-bold mb-2">Veille & Ressources</h2>
-                    <p class="text-gray-400 text-sm">Les dernières news IA, articles Harvard/MIT et nos analyses.</p>
+                    <h2 class="text-3xl font-heading font-bold mb-3">Intelligence & Resources</h2>
+                    <p class="text-gray-400 text-sm">Latest AI news, Harvard/MIT articles, and our insights.</p>
                 </div>
-                <a href="#" class="hidden md:block text-lilia-blue font-bold text-sm hover:underline">Voir tout le blog</a>
+                <a href="#" class="text-lilia-blue font-bold text-sm hover:underline">View all posts</a>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <article class="bg-gray-900 rounded-lg overflow-hidden hover:translate-y-1 transition-transform cursor-pointer">
-                    <div class="h-40 bg-gray-800"></div> <div class="p-5">
-                        <span class="text-xs text-lilia-rose font-bold uppercase">Analyse</span>
-                        <h3 class="font-bold text-lg mt-2 mb-3">L'impact de l'IA sur les PME en 2025</h3>
-                        <p class="text-gray-500 text-xs">Source: LILIA Blog</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-gray-900 rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 cursor-pointer border border-gray-800 hover:border-gray-600 group">
+                    <div class="h-48 bg-gray-800 relative">
+                        <div class="absolute inset-0 bg-lilia-midnight opacity-20 group-hover:opacity-10 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-lilia-rose font-bold uppercase tracking-wider">Analysis</span>
+                        <h3 class="font-bold text-lg mt-3 mb-4 group-hover:text-lilia-blue transition-colors">AI Impact on SMEs in 2025</h3>
+                        <p class="text-gray-500 text-xs flex justify-between">
+                            <span>LILIA Blog</span>
+                            <span>5 min read</span>
+                        </p>
                     </div>
                 </article>
-                <article class="bg-gray-900 rounded-lg overflow-hidden hover:translate-y-1 transition-transform cursor-pointer">
-                    <div class="h-40 bg-gray-800"></div>
-                    <div class="p-5">
-                        <span class="text-xs text-blue-400 font-bold uppercase">Harvard Business R.</span>
-                        <h3 class="font-bold text-lg mt-2 mb-3">Pourquoi la transformation digitale échoue</h3>
-                        <p class="text-gray-500 text-xs">Source: Externe</p>
+                <article class="bg-gray-900 rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 cursor-pointer border border-gray-800 hover:border-gray-600 group">
+                    <div class="h-48 bg-gray-800 relative"></div>
+                    <div class="p-6">
+                        <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Harvard Business R.</span>
+                        <h3 class="font-bold text-lg mt-3 mb-4 group-hover:text-lilia-blue transition-colors">Why Digital Transformation Fails</h3>
+                        <p class="text-gray-500 text-xs flex justify-between">
+                            <span>External</span>
+                            <span>8 min read</span>
+                        </p>
                     </div>
                 </article>
-                <article class="bg-gray-900 rounded-lg overflow-hidden hover:translate-y-1 transition-transform cursor-pointer">
-                    <div class="h-40 bg-gray-800"></div>
-                    <div class="p-5">
-                        <span class="text-xs text-lilia-blue font-bold uppercase">Tech</span>
-                        <h3 class="font-bold text-lg mt-2 mb-3">Nouveaux modèles d'agents autonomes</h3>
-                        <p class="text-gray-500 text-xs">Source: MIT Review</p>
+                <article class="bg-gray-900 rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300 cursor-pointer border border-gray-800 hover:border-gray-600 group">
+                    <div class="h-48 bg-gray-800 relative"></div>
+                    <div class="p-6">
+                        <span class="text-xs text-lilia-blue font-bold uppercase tracking-wider">Tech</span>
+                        <h3 class="font-bold text-lg mt-3 mb-4 group-hover:text-lilia-blue transition-colors">New Autonomous Agent Models</h3>
+                        <p class="text-gray-500 text-xs flex justify-between">
+                            <span>MIT Review</span>
+                            <span>3 min read</span>
+                        </p>
                     </div>
                 </article>
             </div>
@@ -285,87 +311,109 @@
     </section>
 
     <footer class="border-t border-gray-800 bg-[#0b0b10] pt-0">
-        <div class="max-w-7xl mx-auto border-b border-gray-800">
-            <div class="grid md:grid-cols-2">
-                <a href="#" class="group block p-10 md:p-16 border-r border-gray-800 hover:bg-gray-900 transition-colors">
-                    <div class="text-2xl md:text-3xl font-heading font-bold mb-2 flex items-center justify-between">
-                        Réserver une démo
-                        <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-lilia-blue"></i>
-                    </div>
-                    <p class="text-gray-500">Discutez avec nos experts.</p>
-                </a>
-                <a href="#" class="group block p-10 md:p-16 hover:bg-gray-900 transition-colors">
-                    <div class="text-2xl md:text-3xl font-heading font-bold mb-2 flex items-center justify-between">
-                        Commencer maintenant
-                        <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-lilia-blue"></i>
-                    </div>
-                    <p class="text-gray-500">Créez votre compte client.</p>
-                </a>
+        <div class="border-b border-gray-800">
+            <div class="w-full">
+                <div class="grid md:grid-cols-2">
+                    <a href="#" class="group block p-12 md:p-24 border-r border-gray-800 hover:bg-gray-900 transition-colors">
+                        <div class="text-3xl md:text-4xl font-heading font-bold mb-4 flex items-center justify-between">
+                            Request a Demo
+                            <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-lilia-blue text-2xl"></i>
+                        </div>
+                        <p class="text-gray-500 text-lg">Talk with our experts today.</p>
+                    </a>
+                    <a href="#" class="group block p-12 md:p-24 hover:bg-gray-900 transition-colors">
+                        <div class="text-3xl md:text-4xl font-heading font-bold mb-4 flex items-center justify-between">
+                            Start Building
+                            <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-lilia-blue text-2xl"></i>
+                        </div>
+                        <p class="text-gray-500 text-lg">Create your client account.</p>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 py-16">
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-sm">
+        <div class="max-w-7xl mx-auto px-4 py-20">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 text-sm">
                 <div class="col-span-2 lg:col-span-1">
-                    <div class="font-heading font-bold text-2xl mb-6">LILIA</div>
-                    <p class="text-gray-500 mb-6 text-xs">
-                        Agence d'intelligence artificielle dédiée à la transformation des entreprises et des particuliers.
+                    <div class="font-heading font-bold text-3xl mb-6 tracking-widest">LILIA</div>
+                    <p class="text-gray-500 mb-8 text-xs leading-relaxed max-w-xs">
+                        Artificial Intelligence Agency dedicated to the transformation of businesses and individuals.
                     </p>
                     <div class="flex gap-3">
-                        <button class="px-3 py-1 border border-gray-700 rounded text-xs hover:bg-gray-800">
-                            <i class="fa-solid fa-globe mr-2"></i>FR / EN
+                        <button class="px-4 py-2 border border-gray-700 rounded text-xs hover:bg-gray-800 transition-colors text-white">
+                            <i class="fa-solid fa-globe mr-2"></i>EN / FR
                         </button>
-                        <button class="px-3 py-1 border border-gray-700 rounded text-xs hover:bg-gray-800" title="Changer de thème">
+                        <button class="px-4 py-2 border border-gray-700 rounded text-xs hover:bg-gray-800 transition-colors text-white" title="Toggle Theme">
                             <i class="fa-solid fa-moon"></i>
                         </button>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-gray-300 mb-4 uppercase text-xs tracking-wider">Produits</h4>
-                    <ul class="space-y-2 text-gray-500">
-                        <li><a href="#" class="hover:text-lilia-blue">Découverte</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Start</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Pro</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Entreprise</a></li>
+                    <h4 class="font-bold text-white mb-6 uppercase text-xs tracking-wider">Products</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Discovery</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Start</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Pro</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Enterprise</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-gray-300 mb-4 uppercase text-xs tracking-wider">Services</h4>
-                    <ul class="space-y-2 text-gray-500">
-                        <li><a href="#" class="hover:text-lilia-blue">Consulting</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Formation</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Développement</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Audit</a></li>
+                    <h4 class="font-bold text-white mb-6 uppercase text-xs tracking-wider">Services</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Consulting</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Training</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Development</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Audit</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-gray-300 mb-4 uppercase text-xs tracking-wider">LILIA</h4>
-                    <ul class="space-y-2 text-gray-500">
-                        <li><a href="#" class="hover:text-lilia-blue">À propos</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Carrières</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Blog</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Contact</a></li>
+                    <h4 class="font-bold text-white mb-6 uppercase text-xs tracking-wider">Company</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
                  <div>
-                    <h4 class="font-bold text-gray-300 mb-4 uppercase text-xs tracking-wider">Légal</h4>
-                    <ul class="space-y-2 text-gray-500">
-                        <li><a href="#" class="hover:text-lilia-blue">Confidentialité</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">CGV</a></li>
-                        <li><a href="#" class="hover:text-lilia-blue">Cookies</a></li>
+                    <h4 class="font-bold text-white mb-6 uppercase text-xs tracking-wider">Legal</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-lilia-blue transition-colors">Cookies</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="mt-16 pt-8 border-t border-gray-800 text-center text-xs text-gray-600">
-                &copy; 2025 LILIA AGENCY. Tous droits réservés.
+            <div class="mt-20 pt-8 border-t border-gray-800 text-center text-xs text-gray-600">
+                &copy; 2025 LILIA AGENCY. All rights reserved.
             </div>
         </div>
     </footer>
 
+    <button id="pageUpBtn" onclick="scrollToTop()" class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-lilia-blue text-lilia-midnight rounded-full shadow-lg shadow-lilia-blue/30 flex items-center justify-center hover:bg-white transition-colors cursor-pointer" title="Back to Top">
+        <i class="fa-solid fa-arrow-up text-lg font-bold"></i>
+    </button>
+
+    <script>
+        // Page Up Button Logic
+        const pageUpBtn = document.getElementById('pageUpBtn');
+        
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                pageUpBtn.classList.add('show');
+            } else {
+                pageUpBtn.classList.remove('show');
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
