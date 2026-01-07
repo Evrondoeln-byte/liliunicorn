@@ -145,26 +145,27 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                <span data-translate="hero_title_1" data-en="Hire the Brain." data-fr="Engagez le Cerveau.">Hire the
-                    Brain.</span> <br>
-                <span data-translate="hero_title_2" data-en="Deploy the" data-fr="Déployez la">Deploy the</span>
+            <h1
+                class="text-5xl md:text-8xl lg:text-9xl font-black mb-10 leading-[0.9] tracking-tighter transition-all duration-700">
+                <span data-translate="hero_title_1"
+                    data-en="<span class='font-black'>HIRE</span> your 24/7 AI workforce <span class='font-black'>NOW!</span>"
+                    data-fr="<span class='font-black'>ENGAGEZ</span> votre équipe IA 24/7 <span class='font-black'>MAINTENANT !</span>">
+                    <span class='font-black'>HIRE</span> your 24/7 AI workforce <span class='font-black'>NOW!</span>
+                </span> <br>
                 <span class="text-transparent bg-clip-text bg-lilia-gradient" data-translate="hero_title_accent"
-                    data-en="24/7 AI Agent Workforce." data-fr="Force de Travail IA 24/7.">24/7 AI Agent
-                    Workforce.</span>
+                    data-en="<span class='font-black'>ACTIVATE</span> your Company’s <span class='font-black'>DIGITAL MEMORY.</span>"
+                    data-fr="<span class='font-black'>ACTIVEZ</span> la <span class='font-black'>MÉMOIRE NUMÉRIQUE</span> de votre Entreprise.">
+                    <span class='font-black'>ACTIVATE</span> your Company’s <span class='font-black'>DIGITAL
+                        MEMORY.</span>
+                </span>
             </h1>
 
-            <p class="text-2xl md:text-3xl text-lilia-blue font-heading font-bold mb-6" data-translate="hero_subtitle"
-                data-en="Do more, faster, for less" data-fr="Faites plus, plus vite, pour moins">
-                Do more, faster, for less
-            </p>
-
-            <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-10 font-light leading-relaxed"
+            <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto mb-12 font-medium leading-relaxed tracking-wide"
                 data-translate="hero_desc"
-                data-en="Get the competitive edge with the secure 2nd Brain—your institutional knowledge center—seamlessly connecting your autonomous AI Employee team and your teams for integrated productivity."
-                data-fr="Prenez l'avantage avec le 2nd Cerveau sécurisé—votre centre de connaissances institutionnelles—connectant parfaitement vos équipes d'Employés IA autonomes pour une productivité intégrée.">
-                Get the competitive edge with the secure 2nd Brain—your institutional knowledge center—seamlessly
-                connecting your autonomous AI Employee team and your teams for integrated productivity.
+                data-en="Unlock <span class='font-black text-white'>DATA</span>. Drive <span class='font-black text-white'>ACTION</span>"
+                data-fr="Libérez vos <span class='font-black text-white'>DONNÉES</span>. Pilotez l'<span class='font-black text-white'>ACTION</span>">
+                Unlock <span class='font-black text-white'>DATA</span>. Drive <span
+                    class='font-black text-white'>ACTION</span>
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -829,7 +830,7 @@
             translatableElements.forEach(el => {
                 const text = el.getAttribute(`data-${lang.toLowerCase()}`);
                 if (text) {
-                    el.innerText = text;
+                    el.innerHTML = text;
                 }
             });
         }
