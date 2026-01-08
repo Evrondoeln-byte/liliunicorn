@@ -555,19 +555,25 @@
 
                 </div> <!-- Close agents-grid-container -->
 
-                <!-- Fade Overlay & Toggle Button -->
-                <div id="agents-overlay"
-                    class="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-lilia-dark via-lilia-dark/90 to-transparent z-20 flex items-end justify-center pb-12 transition-all duration-500">
-                    <button id="see-all-agents-btn"
-                        class="px-8 py-4 bg-gray-800/90 hover:bg-lilia-blue hover:text-lilia-midnight border border-gray-700 rounded-full font-bold transition-all flex items-center gap-3 backdrop-blur-md group shadow-2xl"
-                        data-translate="see_all_agents"
-                        data-en="See all AI Agents <i class='fa-solid fa-chevron-down group-hover:translate-y-1 transition-transform'></i>"
-                        data-fr="Voir tous les Agents IA <i class='fa-solid fa-chevron-down group-hover:translate-y-1 transition-transform'></i>">
-                        See all AI Agents <i
-                            class="fa-solid fa-chevron-down group-hover:translate-y-1 transition-transform"></i>
-                    </button>
-                </div>
-            </div> <!-- Close agents-grid-wrapper -->
+            </div> <!-- Close agents-grid-container -->
+
+            <!-- Fade Overlay -->
+            <div id="agents-overlay"
+                class="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-lilia-dark via-lilia-dark/90 to-transparent z-10 pointer-events-none transition-all duration-500">
+            </div>
+
+            <!-- Toggle Button Container -->
+            <div class="relative z-20 flex justify-center -mt-16 pb-12">
+                <button id="see-all-agents-btn"
+                    class="px-8 py-4 bg-gray-800 border border-gray-700 rounded-full font-bold transition-all flex items-center gap-3 backdrop-blur-md group shadow-2xl hover:bg-lilia-blue hover:text-lilia-midnight"
+                    data-translate="see_all_agents"
+                    data-en="See all AI Agents <i class='fa-solid fa-chevron-down group-hover:translate-y-1 transition-transform'></i>"
+                    data-fr="Voir tous les Agents IA <i class='fa-solid fa-chevron-down group-hover:translate-y-1 transition-transform'></i>">
+                    See all AI Agents <i
+                        class="fa-solid fa-chevron-down group-hover:translate-y-1 transition-transform"></i>
+                </button>
+            </div>
+        </div> <!-- Close agents-grid-wrapper -->
         </div>
     </section>
 
@@ -884,18 +890,15 @@
 
                 if (isExpanded) {
                     gridContainer.style.maxHeight = '5000px';
-                    gridOverlay.classList.add('opacity-0', 'pointer-events-none');
+                    gridOverlay.classList.add('opacity-0');
+                    gridOverlay.classList.add('pointer-events-none'); // Ensure overlay doesn't block clicks when transparent
                     seeAllBtn.innerHTML = currentLang === 'EN'
                         ? 'See less <i class="fa-solid fa-chevron-up group-hover:-translate-y-1 transition-transform"></i>'
                         : 'Voir moins <i class="fa-solid fa-chevron-up group-hover:-translate-y-1 transition-transform"></i>';
-
-                    setTimeout(() => {
-                        gridOverlay.style.visibility = 'hidden';
-                    }, 500);
                 } else {
                     gridContainer.style.maxHeight = '850px';
-                    gridOverlay.style.visibility = 'visible';
-                    gridOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                    gridOverlay.classList.remove('opacity-0');
+                    gridOverlay.classList.remove('pointer-events-none'); // Allow overlay to block clicks when visible
                     seeAllBtn.innerHTML = currentLang === 'EN'
                         ? "See all AI Agents <i class='fa-solid fa-chevron-down group-hover:translate-y-1 transition-transform'></i>"
                         : "Voir tous les Agents IA <i class='fa-solid fa-chevron-down group-hover:translate-y-1 transition-transform'></i>";
